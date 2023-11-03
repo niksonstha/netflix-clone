@@ -1,6 +1,5 @@
 import React, { useRef } from "react";
 import "./SignUpScreen.css";
-// import { app } from "../firebase";
 import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
