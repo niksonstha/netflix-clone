@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./Nav.css";
+import { signOut } from "firebase/auth";
+import { auth } from "./firebase";
 
 function Nav() {
   const [show, setShow] = useState(false);
@@ -10,6 +12,10 @@ function Nav() {
     } else {
       setShow(false);
     }
+  };
+
+  const logoutHanlder = () => {
+    signOut(auth);
   };
 
   useEffect(() => {
@@ -32,6 +38,7 @@ function Nav() {
           className="nav__avatar"
           src="https://upload.wikimedia.org/wikipedia/commons/0/0b/Netflix-avatar.png"
           alt=""
+          onClick={logoutHanlder}
         />
       </div>
     </div>

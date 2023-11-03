@@ -10,7 +10,7 @@ import { login, logout, selectUser } from "./features/counter/userSlice";
 
 function App() {
   const user = useSelector(selectUser);
-  console.log(user);
+
   const dispatch = useDispatch();
   useEffect(() => {
     const unSubscribe = onAuthStateChanged(auth, (userAuth) => {
@@ -24,7 +24,7 @@ function App() {
         );
       } else {
         //! logged out
-        dispatch(logout);
+        dispatch(logout());
       }
     });
     return unSubscribe;
